@@ -86,7 +86,7 @@
                              &kp LGUI &trans   &ext_power EP_TOG  &rgb_ug RGB_TOG &trans    &trans
                         >;
 
-                        sensor-bindings = <&inc_dec_rgb_ug RGB_BRI RGB_BRD>;
+                        sensor-bindings = <&inc_dec_kp RGB_BRI RGB_BRD>;
                 };
 
         };
