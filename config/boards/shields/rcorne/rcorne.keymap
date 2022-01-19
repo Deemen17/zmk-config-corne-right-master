@@ -11,10 +11,10 @@
 #include <dt-bindings/zmk/rgb.h>
 
 
-#define NBF LA(LS(F)) // Netbeans shortcut Format: Alt + Shift + B
-#define GCR LC(LA(G)) // Custom shortcut Google Chrome: Ctrol + Alt + G
-#define ATB LA(TAB)   // Switch tab shortcut: Alt + Tab
-#define SRC LG(LS(S)) // Screen Capture
+// NBF LA(LS(F)) Netbeans shortcut Format: Alt + Shift + B
+// GCR LC(LA(G)) Custom shortcut Google Chrome: Ctrol + Alt + G
+// ATB LA(TAB)   Switch tab: Alt + Tab
+// SRC LG(LS(S)) Screen Capture: Gui + Shift + S
 
 // Sticky key stays 1.5s
 &sk {
@@ -39,7 +39,7 @@
    &kp TAB   &kp Q &kp W &kp E &kp R &kp T     &kp Y &kp U  &kp I     &kp O   &kp P    &kp C_PP
    &kp LCTRL &kp A &kp S &kp D &kp F &kp G     &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
    &sk LSHFT &kp Z &kp X &kp C &kp V &kp B     &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp RET
-                       &kp ATB &mo 1 &kp SPACE &kp BSPC &mo 2 &mo 3
+                       &kp LA(TAB) &mo 1 &kp SPACE &kp BSPC &mo 2 &mo 3
                         >;
 
                         sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -58,7 +58,7 @@
                         label = "Lower";
                         bindings = <
    &kp ESC &kp N1 &kp N2    &kp N3    &kp N4    &kp N5  &kp N6  &kp N7 &kp N8 &kp N9 &kp N0 &trans
-   &trans  &trans &kp LC(S) &trans    &kp LC(F) &kp GCR &trans  &kp N4 &kp N5 &kp N6 &trans &trans
+   &trans  &trans &kp LC(S) &trans    &kp LC(F) &trans  &trans  &kp N4 &kp N5 &kp N6 &trans &trans
    &trans  &trans &kp LC(X) &kp LC(C) &kp LC(V) &trans  &trans  &kp N1 &kp N2 &kp N3 &trans &trans
                             &trans    &trans    &trans  &kp DEL &trans &kp N0      
                         >;
@@ -70,17 +70,17 @@
 
 // -------------------------------------   -------------------------------------
 // | ESC |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  |     |
-// |     |     | SRC |  UP |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `  |
+// |     |     | SRC |  UP | NBF |     |   |  -  |  =  |  [  |  ]  |  \  |  `  |
 // |     |     | LFT | DWN | RGT |     |   |  _  |  +  |  {  |  }  | "|" |  ~  |
 // ------------------| GUI |     | SPC |   |     |     |     |------------------
 //                   -------------------   -------------------
                         
                         label = "Raise";
                         bindings = <
-   &kp ESC &kp EXCL &kp AT   &kp HASH &kp DLLR  &kp PRCNT &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR &trans
-   &trans  &trans   &kp SRC  &kp UP   &kp NBF   &trans    &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp BSLH &kp GRAVE
-   &trans  &trans   &kp LEFT &kp DOWN &kp RIGHT &trans    &kp UNDER &kp PLUS  &kp LBRC        &kp RBRC &kp PIPE &kp TILDE
-                    	     &kp LGUI &trans    &trans    &trans    &trans    &trans
+   &kp ESC &kp EXCL &kp AT        &kp HASH &kp DLLR      &kp PRCNT     &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR &trans
+   &trans  &trans   &kp LG(LS(S)) &kp UP   &kp LA(LS(F)) &kp LC(LA(G)) &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp BSLH &kp GRAVE
+   &trans  &trans   &kp LEFT      &kp DOWN &kp RIGHT     &trans        &kp UNDER &kp PLUS  &kp LBRC        &kp RBRC &kp PIPE &kp TILDE
+                    	          &kp LGUI &trans        &trans        &trans    &trans    &trans
                         >;
 
                         sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
