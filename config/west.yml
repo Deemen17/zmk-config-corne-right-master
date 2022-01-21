@@ -14,7 +14,7 @@ manifest:
 
     - name: zmk
       remote: justussoh
-      revision: feat/luna
+      revision: main
       import: app/west.yml
   self:
     path: config
