@@ -13,7 +13,7 @@ manifest:
     #   revision: display/bongo-cat-widget
 
     - name: zmk
-      remote: justussoh
+      remote: zmkfirmware
       revision: main
       import: app/west.yml
   self:
