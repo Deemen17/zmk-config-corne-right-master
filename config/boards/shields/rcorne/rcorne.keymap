@@ -29,7 +29,7 @@
 
 // Mod-tap 
 &mt {
-    tapping-term-ms = <1000>;
+    tapping-term-ms = <1500>;
 };
 
 #define MTSSP &mt LSHFT SPACE
@@ -45,7 +45,7 @@
 // | CTL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '  |
 // | SHT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | RET |
 // ------------------| ATB | LWR | SPC |   | BKP | RSE  | ADJ |------------------
-//                   -------------------   -------------------
+//                   \------------------   -------------------/
                    
                         label = "Base";
                         bindings = <
@@ -66,8 +66,8 @@
 // |     | SLA |SAVE |     | SER | GCR |   |     |  4  |  5  |  6  |     |     |
 // |CAPS |UNDO | CUT | CPY |PASTE|     |   |     |  1  |  2  |  3  |     |     |
 // ------------------|     |     |     |   | DEL |     |  0  |------------------
-//                   -------------------   -------------------
-                        
+//                   \------------------   ------------------/
+
                         label = "Lower";
                         bindings = <
    &kp ESC  &kp N1    &kp N2    &kp N3    &kp N4    &kp N5  &kp N6  &kp N7 &kp N8 &kp N9 &kp N0 &trans
@@ -83,17 +83,17 @@
 
 // -------------------------------------   -------------------------------------
 // | ESC |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  |     |
-// |     |     | SRC |  UP | NBF |     |   |  -  |  =  |  [  |  ]  |  \  |  `  |
-// |     |     | LFT | DWN | RGT |     |   |  _  |  +  |  {  |  }  | "|" |  ~  |
-// ------------------| GUI |     | SPC |   |     |     |     |------------------
-//                   -------------------   -------------------
+// |     |  |  |  \  |  /  |  {  |  [  |   |  ]  |  }  |  ?  |  =  |  +  |  `  |
+// |     |     |     |     |     |     |   |     |     |     |  -  |  _  |  ~  |
+// ------------------| GUI |     |     |   |     |     |     |------------------
+//                   \-----------------   -------------------/
                         
                         label = "Raise";
                         bindings = <
-   &kp ESC &kp EXCL &kp AT   &kp HASH &kp DLLR  &kp PRCNT &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR &trans
-   &trans  &trans   SRC      &kp UP   NBF       GCR       &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp BSLH &kp GRAVE
-   &trans  &trans   &kp LEFT &kp DOWN &kp RIGHT &trans    &kp UNDER &kp PLUS  &kp LBRC        &kp RBRC &kp PIPE &kp TILDE
-                    	     &kp LGUI &trans    &trans    &trans    &trans    &trans
+   &kp ESC &kp EXCL &kp AT   &kp HASH &kp DLLR  &kp PRCNT &kp CARET &kp AMPS &kp STAR  &kp LPAR  &kp RPAR &trans
+   &trans  &kp PIPE &kp BSLH &kp FSLH &kp LBRC  &kp LBKT  &kp RBKT  &kp RBRC &kp QMARK &kp EQUAL &kp PLUS &kp GRAVE
+   &trans  &trans   &trans   &trans   &trans    &trans    &trans    &trans   &trans    &kp MINUS &kp UNDER &kp TILDE
+                    	     &kp LGUI &trans    &trans    &trans    &trans   &trans
                         >;
 
                         sensor-bindings = <&inc_dec_kp UP DOWN>;
@@ -106,8 +106,8 @@
 // | RST  |     |     |     |     |     |   | EFR | BRD | SPD | HUD | SAD | RST |
 // | BLD  |     |     |     |     |     |   |     |     |     |     |     | BLD |
 // -------------------|     |     | ETG |   | LTG |     |     |------------------
-//                    -------------------   -------------------
-                        
+//                    \------------------   ------------------/
+     
                         label = "Adjust";
                         bindings = <
    &bt BT_CLR  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4  &rgb_ug RGB_EFF &rgb_ug RGB_BRI &rgb_ug RGB_SPI &rgb_ug RGB_HUI &rgb_ug RGB_SAI &trans
@@ -116,7 +116,7 @@
                                          &trans       &trans   &ext_power EP_TOG &rgb_ug RGB_TOG &trans          &trans
                         >;
 
-                        sensor-bindings = <&inc_dec_kp LEFT RIGHT>;
+                        sensor-bindings = <&inc_dec_kp RIGHT LEFT>;
                 };
 
         };
