@@ -21,6 +21,7 @@
 #define LWR &mo 1
 #define RSE &mo 2
 #define ADJ &mo 3
+#define GAME &tog 4
 
 // Sticky key stays 2s
 &sk {
@@ -111,12 +112,32 @@
                         label = "Adjust";
                         bindings = <
    &bt BT_CLR  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4  &rgb_ug RGB_EFF &rgb_ug RGB_BRI &rgb_ug RGB_SPI &rgb_ug RGB_HUI &rgb_ug RGB_SAI &trans
-   &reset      &trans     &trans         &trans       &trans       &trans        &rgb_ug RGB_EFR &rgb_ug RGB_BRD &rgb_ug RGB_SPD &rgb_ug RGB_HUD &rgb_ug RGB_SAD &reset
+   &reset      &trans     &trans         &trans       &trans       GAME           &rgb_ug RGB_EFR &rgb_ug RGB_BRD &rgb_ug RGB_SPD &rgb_ug RGB_HUD &rgb_ug RGB_SAD &reset
    &bootloader &trans     &trans         &trans       &trans       &trans        &trans          &trans          &trans          &trans          &trans          &bootloader
                                          &trans       &trans   &ext_power EP_TOG &rgb_ug RGB_TOG &trans          &trans
                         >;
 
                         sensor-bindings = <&inc_dec_kp RIGHT LEFT>;
+                };
+
+                game_layer {
+
+// -------------------------------------   -------------------------------------
+// | ESC |  1  |  2  |  3  |  4  |  5  |   |  Y  |     |     |     |     |     |
+// | TAB |  Q  |  W  |  E  |  R  | GAM |   |     |     |     |     |     |     |
+// | CTL |     |     |  D  |  F  |  B  |   |     |     |     |     |     |     |
+// ------------------| ATB |     |     |   |     |     |     |------------------
+//                   \------------------   ------------------/
+     
+                        label = "Game";
+                        bindings = <
+   &kp ESC   &kp N1 &kp N2 &kp N3 &kp N4 &kp N5 &kp Y &none &none &none &none &none
+   &kp TAB   &kp Q  &kp W  &kp E  &kp R  &kp G  &none &none &none &none &none &none
+   &kp LCTRL &none  &none  &kp D  &kp F  &kp B  &none &none &none &none &none &none
+                    ATB    &none  &none  GAME  &none &none
+                        >;
+
+                        sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
                 };
 
         };
