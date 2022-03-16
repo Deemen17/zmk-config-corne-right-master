@@ -8,13 +8,14 @@ manifest:
       url-base: https://github.com/justussoh
 
   projects:
-    # - name: zmk
-    #   remote: petejohanson
-    #   revision: display/bongo-cat-widget
-
     - name: zmk
-      remote: zmkfirmware
+      remote: justussoh
       revision: main
       import: app/west.yml
+
+    # - name: zmk
+    #   remote: zmkfirmware
+    #   revision: main
+    #   import: app/west.yml
   self:
     path: config
