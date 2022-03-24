@@ -35,6 +35,35 @@
 
 #define MTSSP &mt LSHFT SPACE
 
+// Macros 
+/ {
+    macros {
+        zed_em_kay: zed_em_kay { // &zed_em_kay
+            label = "ZM_zed_em_kay";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LSHFT>
+                , <&macro_tap &kp Z &kp M &kp K>
+                , <&macro_release &kp LSHFT>
+                ;
+        };
+
+        my_macro: my_macro {
+        	compatible = "zmk,behavior-macro";
+			label = "ZM_my_macro";
+			#binding-cells = <0>;
+			wait-ms = <30>;
+			tap-ms = <40>;
+			bindings = <&kp Z &kp M &kp K>;
+    	};
+
+    };
+};
+
+#define ZMK &zed_em_kay
+#define MMRC &my_macro
+
 / {
         keymap {
                 compatible = "zmk,keymap";
@@ -93,7 +122,7 @@
                         bindings = <
    &kp ESC &kp EXCL &kp AT   &kp HASH &kp DLLR  &kp PRCNT &kp CARET &kp AMPS &kp STAR  &kp LPAR  &kp RPAR &trans
    &trans  &kp PIPE &kp BSLH &kp FSLH &kp LBRC  &kp LBKT  &kp RBKT  &kp RBRC &kp QMARK &kp EQUAL &kp PLUS &kp GRAVE
-   &trans  &trans   &trans   &trans   &trans    &trans    &trans    &trans   &trans    &kp MINUS &kp UNDER &kp TILDE
+   &trans  ZMK      MMRC     &trans   &trans    &trans    &trans    &trans   &trans    &kp MINUS &kp UNDER &kp TILDE
                     	     &kp LGUI &trans    &trans    &trans    &trans   &trans
                         >;
 
