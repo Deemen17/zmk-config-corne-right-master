@@ -1,0 +1,9 @@
+file_format: "1"
+id: ergotonic49
+name: Ergotonic49
+type: shield
+url: https://hanachiya.booth.pm/items/3040189
+requires: [pro_micro]
+features:
+  - keys
+  - underglow
