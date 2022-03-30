@@ -1,9 +1,0 @@
-# Copyright (c) 2021 The ZMK Contributors
-# SPDX-License-Identifier: MIT
-
-if SHIELD_ERGOTONIC49
-
-config ZMK_KEYBOARD_NAME
-    default "Ergotonic49"
-
-endif
